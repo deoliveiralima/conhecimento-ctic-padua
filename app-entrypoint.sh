@@ -10,7 +10,6 @@ php artisan route:clear
 php artisan config:clear
 php artisan view:clear
 cp /home/.env /var/www/html/.env
-sleep 30 &&
 php artisan migrate
 php artisan db:seed --class=AdminSeeder 
 php artisan db:seed --class=CategoriasSeeder
