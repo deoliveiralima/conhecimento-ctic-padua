@@ -1,0 +1,45 @@
+version: "3.7"
+services:
+
+  db:
+    image: mysql:5.7
+    container_name: conhecimento_ctic_padua-db
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+  
+    networks:
+      - conhecimento_ctic
+
+  app:
+      build:
+        args:
+          user: admin
+          uid: 1000
+        context: ./
+        dockerfile: Dockerfile
+      image: conhecimento_ctic_padua
+      container_name: conhecimento_ctic_padua-app
+      restart: unless-stopped
+      networks:
+        - conhecimento_ctic
+      ports:
+      - 8000:80
+      depends_on:
+        - db
+      
+
+
+
+     
+
+networks:
+  conhecimento_ctic:
+    driver: bridge

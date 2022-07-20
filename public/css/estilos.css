@@ -1,0 +1,160 @@
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.formulario .row{
+    margin: 0 0 10px 0;
+}
+
+.formulario {
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.formulario input[type=text] {
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    color: #555;
+}
+
+
+.note-editable{
+    background-color: #fff;
+}
+
+
+
+
+ .mensagens_erro{
+    font-size: 20px;
+ }
+
+.inicio_link a:link{
+    text-decoration: none;
+}
+
+.inicio_link a{
+    color:#555;
+    font-family: 'Times New Roman', Times, serif;
+}
+.inicio_link a:hover{
+    color: #999;
+   
+}
+.inicio_link{
+    list-style-type: none;
+}
+
+
+article{
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.conteudo{
+    width: 60%;
+    margin: 0 auto;
+    
+}
+
+.titulo_tutorial{
+    color: #999;
+}
+
+article p{
+    font-size: 19px;
+   
+}
+
+
+
+
+.boas_vindas{
+    margin: 15% 0 0 0;
+
+    font-family: 'Times New Roman', Times, serif;
+    color: #555;
+
+    
+}
+
+.link_sidebar:link{
+    text-decoration: none;
+    
+    
+}
+
+.link_sidebar{
+    color: #555;
+    
+}
+.link_sidebar:hover{
+    color: #333;
+    
+}
+
+.link_sidebar li{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.link_sidebar li:hover{
+    background-color: #ccc;
+}
+
+
+
+.link_login{
+    font-size: 16px;
+    background-color: #333;
+    width: 100%;
+    height: 50px;
+}
+
+.admin_sidebar ul{
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+
+}
+.admin_sidebar_link{
+    font-size: 20px;
+}
+
+.admin_sidebar{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.categorias_select{
+    width: 60%;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #fff;
+    color: #555;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form_cadastro_usuario{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.tabelas_usuarios{
+    
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 5%;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-login{
+    width: 30%;
+    margin: 0 auto;
+
+    margin-top: 5%;
+}
