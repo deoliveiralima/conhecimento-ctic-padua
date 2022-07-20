@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /var/www/html/
+git clone https://github.com/deoliveiralima/conhecimento-ctic-padua.git ./
 composer install --optimize-autoloader --no-dev
 php artisan config:clear
 php artisan cache:clear

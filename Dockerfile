@@ -53,6 +53,7 @@ RUN mkdir -p /home/$user/.composer && \
 
 
 ADD ./app-entrypoint.sh /home/
+ADD ./.env /home/
 
 RUN chmod +x /home/app-entrypoint.sh
 ENTRYPOINT ["/home/app-entrypoint.sh"]
