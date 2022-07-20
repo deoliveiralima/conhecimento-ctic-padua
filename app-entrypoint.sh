@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm /home/.env /var/www/html/
 cd /var/www/html/
 git clone https://github.com/deoliveiralima/conhecimento-ctic-padua.git ./
 composer install --optimize-autoloader --no-dev
