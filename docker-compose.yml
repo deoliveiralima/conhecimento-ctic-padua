@@ -14,6 +14,8 @@ services:
       MYSQL_USER: ${DB_USERNAME}
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
+      volumes:
+        ./mysql-data/:/var/lib/mysql
   
     networks:
       - conhecimento_ctic
