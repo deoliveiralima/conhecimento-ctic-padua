@@ -8,7 +8,7 @@ echo "" >> .env
 echo "DB_CONNECTION=$DB_CONNECTION" >> .env
 echo "DB_HOST=$DB_HOST" >> .env
 echo "DB_PORT=$DB_PORT" >> .env
-echo "DB_DATABASE=$DB_DATABASE" >> .env
+echo "DB_USERNAME=$DB_DATABASE" >> .env
 echo "DB_PASSWORD=$DB_PASSWORD" >> .env
 
 
