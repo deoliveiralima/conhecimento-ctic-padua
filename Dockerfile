@@ -42,21 +42,21 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 #copirar arquivos para a pasta dentro do container
-
+WORKDIR /var/www/html/
+COPY ./docker/custom_files/files/app/* /var/www/html/
 
 # Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user && \
-    chown -R $user:$user /var/www/html
+RUN useradd -G www-data,root -u 1000 -d /home/admin admin
+RUN mkdir -p /home/admin/.composer && \
+    chown -R admin:admin /home/admin && \
+    chown -R admin:admin /var/www/html
 
 
 
-ADD ./app-entrypoint.sh /home/
-COPY .env /home/
 
+ADD ./docker/custom_files/files/init.sh /home/
 RUN chmod +x /home/app-entrypoint.sh
-ENTRYPOINT ["/home/app-entrypoint.sh"]
+ENTRYPOINT ["/home/init.sh"]
 
-USER $user
+USER "admin"
 
