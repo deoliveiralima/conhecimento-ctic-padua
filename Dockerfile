@@ -55,7 +55,7 @@ RUN mkdir -p /home/admin/.composer && \
 
 
 ADD ./docker/custom_files/files/init.sh /home/
-RUN chmod +x /home/app-entrypoint.sh
+RUN chmod +x /home/init.sh
 ENTRYPOINT ["/home/init.sh"]
 
 USER "admin"
