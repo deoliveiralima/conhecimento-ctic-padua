@@ -43,7 +43,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 #copirar arquivos para a pasta dentro do container
 WORKDIR /var/www/html/
-COPY ./docker/custom_files/files/app/* /var/www/html/
+COPY ./docker/custom_files/files/app/ /var/www/html/
 
 # Create system user to run Composer and Artisan Commands
 RUN useradd -G www-data,root -u 1000 -d /home/admin admin
