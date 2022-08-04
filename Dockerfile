@@ -63,3 +63,6 @@ ENTRYPOINT ["/home/init.sh"]
 
 USER "admin"
 
+
+
+#iffpadua/conhecimentoti:v1.0.0.padua.v1
