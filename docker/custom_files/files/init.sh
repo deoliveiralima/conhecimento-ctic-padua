@@ -3,6 +3,8 @@
 
 cd /var/www/html/
 #git clone https://github.com/deoliveiralima/conhecimento-ctic-padua.git ./
+apt-get update
+apt-get install php7.4-pgsql -y
 
 cp ./.env.example ./.env 
 echo "" >> .env
