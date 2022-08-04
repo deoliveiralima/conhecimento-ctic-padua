@@ -4,6 +4,7 @@
 cd /var/www/html/
 #git clone https://github.com/deoliveiralima/conhecimento-ctic-padua.git ./
 
+cp ./.env.exemple ./.env 
 echo "" >> .env
 echo "DB_CONNECTION=$DB_CONNECTION" >> .env
 echo "DB_HOST=$DB_HOST" >> .env
