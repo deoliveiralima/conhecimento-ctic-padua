@@ -4,12 +4,12 @@
 cd /var/www/html/
 #git clone https://github.com/deoliveiralima/conhecimento-ctic-padua.git ./
 
-#echo "" >> .env
-#echo "DB_CONNECTION=$DB_CONNECTION" >> .env
-#echo "DB_HOST=$DB_HOST" >> .env
-#echo "DB_PORT=$DB_PORT" >> .env
-#echo "DB_DATABASE=$DB_DATABASE" >> .env
-#echo "DB_USERNAME=$DB_USERNAME" >> .env
+echo "" >> .env
+echo "DB_CONNECTION=$DB_CONNECTION" >> .env
+echo "DB_HOST=$DB_HOST" >> .env
+echo "DB_PORT=$DB_PORT" >> .env
+echo "DB_DATABASE=$DB_DATABASE" >> .env
+echo "DB_USERNAME=$DB_USERNAME" >> .env
 
 
 composer install --optimize-autoloader --no-dev
