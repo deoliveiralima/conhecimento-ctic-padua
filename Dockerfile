@@ -13,14 +13,16 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     zip \
     unzip
-RUN set -ex \
-  && apk --no-cache add \
-    postgresql-dev
+
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd
+RUN docker-php-ext-install mbstring exif pcntl bcmath gd
+
+RUN apt-get install -y libpq-dev \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install pdo pdo_pgsql pgsql
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
