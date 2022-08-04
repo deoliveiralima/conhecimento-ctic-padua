@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: app-conhecimentoti-padua 
+  
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: app-conhecimentoti-padua
+
+  template:
+    metadata:
+      labels:
+        app: app-conhecimentoti-padua
+    spec:
+        
+      containers:
+      - name: app-conhecimentoti-padua
+        image: iffpadua/conhecimentoti:v1.0.0.padua.v1
+
+        resources:
+          limits:
+            memory: "250Mi"
+            cpu: "250m"
+         
+          requests:
+            memory: "50Mi"
+            cpu: "100m"
+        
+        env:
+        - name: HOSTNAME
+          value: conhecimentoti
+
+        - name: DB_CONNECTION
+          value: pgsql
+
+        - name: DB_HOST
+          value: 10.140.1.13
+
+        - name: DB_PORT
+          value: "5432"
+
+        
+
+        - name: DOMINIO
+          value: PADUA.IFFLUMINENSE.EDU.BR
+      
+        #- name: SENHA_DOMINIO
+        #  value: "SENHA"
+      
+        envFrom:
+          - secretRef:
+              name: secret-conhecimentoti-padua
+
+              
+        ports:
+        - containerPort: 80
+          name: http
+        
+        
+      #https://kubedev.club.hotmart.com/lesson/2OM63PnY46/node-selector
+      nodeSelector:
+        campus: Padua
+
+
+
+
+
+      
