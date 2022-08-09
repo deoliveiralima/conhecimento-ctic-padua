@@ -53,7 +53,7 @@ RUN useradd -G www-data,root -u 1000 -d /home/admin admin
 RUN mkdir -p /home/admin/.composer && \
     chown -R admin:admin /home/admin && \
     chown -R admin:admin /var/www/html
-
+RUN chmod 777 -R /var/www/html/storage/
 
 
 

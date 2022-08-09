@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"app-conhecimentoti-padua","namespace":"default"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"app-conhecimentoti-padua"}},"template":{"metadata":{"labels":{"app":"app-conhecimentoti-padua"}},"spec":{"containers":[{"env":[{"name":"HOSTNAME","value":"conhecimentoti"},{"name":"DB_CONNECTION","value":"pgsql"},{"name":"DB_HOST","value":"10.140.1.13"},{"name":"DB_PORT","value":"5432"},{"name":"DOMINIO","value":"PADUA.IFFLUMINENSE.EDU.BR"}],"envFrom":[{"secretRef":{"name":"secret-conhecimentoti-padua"}}],"image":"iffpadua/conhecimentoti:v1.0.0.padua.v7","name":"app-conhecimentoti-padua","ports":[{"containerPort":80,"name":"http"}],"resources":{"limits":{"cpu":"250m","memory":"250Mi"},"requests":{"cpu":"100m","memory":"50Mi"}}}],"nodeSelector":{"campus":"Padua"}}}}}
+  creationTimestamp: "2022-08-09T11:10:53Z"
+  generation: 1
+  name: app-conhecimentoti-padua
+  namespace: default
+  resourceVersion: "23903535"
+  uid: 642cb83f-3d4c-46a8-9a1a-5876339ba216
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: app-conhecimentoti-padua
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: app-conhecimentoti-padua
+    spec:
+      containers:
+      - env:
+        - name: HOSTNAME
+          value: conhecimentoti
+        - name: DB_CONNECTION
+          value: pgsql
+        - name: DB_HOST
+          value: 10.140.1.13
+        - name: DB_PORT
+          value: "5432"
+        - name: DOMINIO
+          value: PADUA.IFFLUMINENSE.EDU.BR
+        envFrom:
+        - secretRef:
+            name: secret-conhecimentoti-padua
+        image: iffpadua/conhecimentoti:v1.0.0.padua.v7
+        imagePullPolicy: IfNotPresent
+        name: app-conhecimentoti-padua
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 250m
+            memory: 250Mi
+          requests:
+            cpu: 100m
+            memory: 50Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        campus: Padua
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2022-08-09T11:11:00Z"
+    lastUpdateTime: "2022-08-09T11:11:00Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2022-08-09T11:10:54Z"
+    lastUpdateTime: "2022-08-09T11:11:00Z"
+    message: ReplicaSet "app-conhecimentoti-padua-99cbcb94c" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
