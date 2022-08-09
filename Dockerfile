@@ -61,8 +61,8 @@ ADD ./docker/custom_files/files/init.sh /home/
 RUN chmod +x /home/init.sh
 ENTRYPOINT ["/home/init.sh"]
 
-USER "admin"
+#USER "root"
 
 
 
-#iffpadua/conhecimentoti:v1.0.0.padua.v1
+#iffpadua/conhecimentoti:v1.0.0.padua.v6

@@ -20,7 +20,7 @@ spec:
         
       containers:
       - name: app-conhecimentoti-padua
-        image: iffpadua/conhecimentoti:v1.0.0.padua.v1
+        image: iffpadua/conhecimentoti:v1.0.0.padua.v2
 
         resources:
           limits:
